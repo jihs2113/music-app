@@ -1,11 +1,17 @@
 // src/app/(tabs)/(songs)/index.tsx
-import { View, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { defaultStyles } from '@/styles';
+import { TracksList } from '@/components/TracksList';
 
 const SongsScreen = () => {
   return (
     <View style={defaultStyles.container}>
-      <Text style={defaultStyles.text}>Songs screen</Text>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={{ paddingHorizontal: screenPadding.horizontal }}
+      >
+        <TracksList scrollEnabled={false} />
+      </ScrollView>
     </View>
   );
 };
